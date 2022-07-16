@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "ApercuBold";
+    src: url("/fonts/ApercuBold.woff2") format("woff2"),
+}
+
+@font-face {
+    font-family: "ApercuLight";
+    src: url("/fonts/ApercuLight.woff2") format("woff2"),
+}
+
+@font-face {
+    font-family: "ApercuMedium";
+    src: url("/fonts/ApercuMedium.woff2") format("woff2"),
+}
+
+@font-face {
+    font-family: "ApercuMono";
+    src: url("/fonts/ApercuMono.woff2") format("woff2"),
+}
