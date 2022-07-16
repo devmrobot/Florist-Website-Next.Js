@@ -1,7 +1,12 @@
 import React from "react";
+import Navbar from "../components/Navbar";
 
 const livraisonFleursParisBouquetDuMois = () => {
-  return <div>Ready to buy</div>;
+  return (
+  <>
+    <Navbar></Navbar>
+  </>
+  )
 };
 
 export default livraisonFleursParisBouquetDuMois;
