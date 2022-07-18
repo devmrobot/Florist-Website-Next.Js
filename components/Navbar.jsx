@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import styles from "../styles/Navbar.module.scss"
 import Link from "next/link";
 import Image from "next/image";
 import blackLogo from "../public/assets/images/logo-adriane-m-fleuriste-paris-black.svg";
@@ -17,7 +18,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed left-0 top-0 w-full z-10 ease-in duration-300">
+    <div className="navbar">
       <div className="max-w-[1600px] m-auto flex justify-between items-center p-4">
         <Link href="/">
           <Image
