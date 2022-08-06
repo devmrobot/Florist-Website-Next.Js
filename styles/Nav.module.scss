@@ -1,0 +1,41 @@
+.navbar {
+  max-width: 1920px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+}
+
+.navopen {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  transition: all 0.7s cubic-bezier(1, 0, 0, 1);
+  background-color: rgb(0, 0, 0);
+  color: white;
+  z-index: -1;
+}
+
+.navclosed {
+  position: absolute;
+  top: 0;
+  right: -100vw;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  transition: all 0.7s cubic-bezier(1, 0, 0, 1);
+  background-color: rgb(0, 0, 0);
+  color: white;
+  z-index: -1;
+}
+
+.navlinkicon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
