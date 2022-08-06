@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import styles from "../styles/Navbar.module.scss"
+import styles from '../styles/Nav.module.scss'
 import Link from "next/link";
 import Image from "next/image";
 import blackLogo from "../public/assets/images/logo-adriane-m-fleuriste-paris-black.svg";
@@ -8,18 +8,17 @@ import whiteLogo from "../public/assets/images/logo-adriane-m-fleuriste-paris-wh
 import Hamburger from "hamburger-react";
 import { GrMap } from "react-icons/gr";
 
-const Navbar = () => {
+const Navbar = () => {  
   const [nav, setNav] = useState(false);
   const [isOpen, setOpen] = useState(false)
-
 
   const handleNav = () => { 
     setNav(!nav);
   };
 
   return (
-    <div className="navbar">
-      <div className="max-w-[1600px] m-auto flex justify-between items-center p-4">
+    <div>
+      <div className={styles.navbar}>
         <Link href="/">
           <Image
             src={blackLogo}
@@ -27,22 +26,22 @@ const Navbar = () => {
             width="320"
           />
         </Link>
-        <div className="flex justify-between items-center gap-6">
+        <div className={styles.navlinkicon}>
           <div>
             <GrMap size={35} />
           </div>
           <div onClick={handleNav} className="block z-10">
           {nav ? (
-              <Hamburger toggled={isOpen} toggle={setOpen} size={30} color="#fff" rounded/>
+              <Hamburger toggled={isOpen} toggle={setOpen} size={30} color="#fff" duration={1} rounded/>
             ) : (
-              <Hamburger toggled={isOpen} toggle={setOpen} size={30} rounded/>
+              <Hamburger toggled={isOpen} toggle={setOpen} size={30} duration={1.3} rounded/>
             )}
           </div>
           <div
             className={
               nav
-                ? "absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center text-white transition-transform"
-                : "absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center text-white transition-transform"
+                ? styles.navopen
+                : styles.navclosed
             }
           >
             <ul className="flex flex-col gap-20 text-4xl">

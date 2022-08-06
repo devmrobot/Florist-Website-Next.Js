@@ -13,6 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1>ADRIANE M</h1>
+      <Link href="/livraison-fleurs-paris-bouquet-du-mois">Livraisons de fleurs</Link>
     </div>
   )
 }
