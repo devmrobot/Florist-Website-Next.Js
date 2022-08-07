@@ -7,22 +7,23 @@ import { motion } from "framer-motion";
 const Menu = ({ isOpen }) => {
   return (
     <div className={styles.menu}>
-      {isOpen &&
-      <ul>
-        {internalLinks.map((item, i) => (
+      {isOpen && (
+        <ul>
+          {internalLinks.map((item, i) => (
             <motion.li
               initial={{ opacity: 1, translateX: -50 }}
               animate={{ opacity: 1, translateX: 0 }}
               transition={{ duration: 1.5, delay: i * 0.1 }}
+              key={item.id}
             >
-              <a href={item.url} key={item.id}>
+              <a href={item.url}>
                 {item.title}
               </a>
               {/* <img src={item.img}/> */}
             </motion.li>
           ))}
-      </ul>
-      }
+        </ul>
+      )}
     </div>
   );
 };
