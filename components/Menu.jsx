@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import { internalLinks } from "../pages/data";
 import styles from "../styles/Menu.module.scss";
 import { motion } from "framer-motion";
