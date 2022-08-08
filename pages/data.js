@@ -1,4 +1,4 @@
-const internalLinks = [
+export const internalLinks = [
   {
     id:1,
     url: "#1",
@@ -35,6 +35,4 @@ const internalLinks = [
     title: <span>Terrasses & Balcons</span>,
     img: "https://images.unsplash.com/photo-1588200618450-3a5b1d3b9aa5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80",
   },
-]; 
-
-export default internalLinks;
+];
