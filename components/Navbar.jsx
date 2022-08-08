@@ -1,12 +1,12 @@
-import React from "react";
 import { useState } from "react";
 import styles from '../styles/Nav.module.scss'
 import Link from "next/link";
 import Image from "next/image";
 import blackLogo from "../public/assets/images/logo-adriane-m-fleuriste-paris-black.svg";
-import whiteLogo from "../public/assets/images/logo-adriane-m-fleuriste-paris-white.svg";
+// import whiteLogo from "../public/assets/images/logo-adriane-m-fleuriste-paris-white.svg";
 import Hamburger from "hamburger-react";
 import { GrMap } from "react-icons/gr";
+import Menu from "./Menu";
 
 const Navbar = () => {  
   const [nav, setNav] = useState(false);
@@ -21,21 +21,14 @@ const Navbar = () => {
       <div className={styles.navbar}>
         <Link href="/">
           <Image
-            src={blackLogo}
+            src={blackLogo} 
             alt="Logo Adriane M Fleuriste Paris black"
-            width="320"
+            width="200"
           />
         </Link>
         <div className={styles.navlinkicon}>
           <div>
-            <GrMap size={35} />
-          </div>
-          <div onClick={handleNav} className="block z-10">
-          {nav ? (
-              <Hamburger toggled={isOpen} toggle={setOpen} size={30} color="#fff" duration={1} rounded/>
-            ) : (
-              <Hamburger toggled={isOpen} toggle={setOpen} size={30} duration={1.3} rounded/>
-            )}
+            <GrMap size={20} />
           </div>
           <div
             className={
@@ -44,26 +37,14 @@ const Navbar = () => {
                 : styles.navclosed
             }
           >
-            <ul className="flex flex-col gap-20 text-4xl">
-              <li>
-                <Link href="/">Livraisons de fleurs</Link>
-              </li>
-              <li>
-                <Link href="/">Bouquet du mois</Link>
-              </li>
-              <li>
-                <Link href="/">Mariage</Link>
-              </li>
-              <li>
-                <Link href="/">Evènements</Link>
-              </li>
-              <li>
-                <Link href="/">Abonnements</Link>
-              </li> 
-              <li>
-                <Link href="/">Terrasses & Balcons</Link>
-              </li>
-            </ul>
+          <Menu isOpen={isOpen}/>
+          </div>
+          <div onClick={handleNav} className="block z-10">
+          {nav ? (
+              <Hamburger toggled={isOpen} toggle={setOpen} size={20} zindex={1000} color="#fff" duration={1} rounded/>
+            ) : (
+              <Hamburger toggled={isOpen} toggle={setOpen} size={20} zindex={1000} duration={1.3} rounded/>
+            )}
           </div>
         </div>
       </div>
@@ -72,3 +53,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+ 
