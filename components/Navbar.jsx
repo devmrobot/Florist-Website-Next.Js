@@ -1,10 +1,9 @@
-import React from "react";
 import { useState } from "react";
 import styles from '../styles/Nav.module.scss'
 import Link from "next/link";
 import Image from "next/image";
 import blackLogo from "../public/assets/images/logo-adriane-m-fleuriste-paris-black.svg";
-import whiteLogo from "../public/assets/images/logo-adriane-m-fleuriste-paris-white.svg";
+// import whiteLogo from "../public/assets/images/logo-adriane-m-fleuriste-paris-white.svg";
 import Hamburger from "hamburger-react";
 import { GrMap } from "react-icons/gr";
 import Menu from "./Menu";
