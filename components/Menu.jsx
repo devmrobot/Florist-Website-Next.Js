@@ -3,7 +3,10 @@ import { internalLinks } from "../pages/data";
 import styles from "../styles/Menu.module.scss";
 import { motion } from "framer-motion";
 
-const Menu = ({ isOpen }) => {
+const Menu = (props) => {
+  
+  const isOpen = props.isOpen;
+
   return (
     <div className={styles.menu}>
       {isOpen && (
