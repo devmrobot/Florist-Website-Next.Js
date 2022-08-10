@@ -1,8 +1,18 @@
-.menu {
-  position: relative;
-  left: 220px;
-  top: 15vh;
-  overflow: hidden;
-  width: calc(90vw - 260px);
-}
+// .menu {
+//   position: relative;
+//   left: 200px;
+//   top: 15vh;
+//   overflow: hidden;
+//   width: calc(90vw - 260px);
+// }
 
+.cursor {
+  background-color: rgb(255, 255, 255);
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
