@@ -1,28 +1,62 @@
 import { internalLinks } from "../data/data";
-import styles from "../styles/Menu.module.scss";
+import Title from "./Title";
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { useState, useEffect } from "react";
+import styles from "../styles/Menu.module.scss";
 
 const Menu = ({ isOpen }) => {
+
+  const [mousePosition, setMousePosition] = useState({
+    x: 0,
+    y: 0
+  });
+  const [cursorVariant, setCursorVariant] = useState("default");
+
+  useEffect(() => {
+    const mouseMove = e => {
+      setMousePosition({
+        x: e.clientX,
+        y: e.clientY
+      })
+    }
+
+    window.addEventListener("mousemove", mouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", mouseMove);
+    }
+  }, []);
+
+  const variants = {
+    default: {
+      x: mousePosition.x - 16,
+      y: mousePosition.y - 16,
+    },
+    text: {
+      height: 80,
+      width: 80,
+      x: mousePosition.x - 40,
+      y: mousePosition.y - 40,
+      backgroundColor: "white",
+      mixBlendMode: "difference"
+    }
+  }
+
+  const textEnter = () => setCursorVariant("text");
+  const textLeave = () => setCursorVariant("default");
+
   return (
-    <div className={styles.menu}>
-      {isOpen && (
-        <ul>
-          {internalLinks.map((internalLink, i) => (
-            <motion.li
-              initial={{ opacity: 1, translateX: -50 }}
-              animate={{ opacity: 1, translateX: 0 }}
-              transition={{ duration: 1.5, delay: i * 0.1 }}
-              key={internalLink.id}
-            >
-              <Link href={internalLink.url}>
-                <a>{internalLink.title}</a>
-              </Link>
-              {/* <img src={item.img}/> */}
-            </motion.li>
-          ))}
-        </ul>
-      )}
+    <div>
+      <ul>
+        {internalLinks.map((internalLink, i) => (
+          <Title key={internalLink.id} internalLink={internalLink} i={i} isOpen={isOpen} textEnter={textEnter} textLeave={textLeave} />
+        ))}
+      </ul>
+      <motion.div
+        className={styles.cursor}
+        variants={variants}
+        animate={cursorVariant}
+      />
     </div>
   );
 };
